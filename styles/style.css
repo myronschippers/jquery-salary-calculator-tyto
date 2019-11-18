@@ -1,3 +1,42 @@
 .red {
     background: red;
 }
+
+.plainTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.plainTable th,
+.plainTable td {
+    padding: 6px 8px;
+    border: 1px solid #292d35;
+}
+
+.plainTable th {
+    background-color: #4a4f5a;
+    color: #ffffff;
+}
+
+.plainTable tr:nth-child(even) td {
+    background-color: #e8ebf2;
+}
+
+.totalMonthly {
+    padding: 10px 0 0;
+    text-align: right;
+}
+
+.addEmployee {
+    padding: 10px 0;
+    text-align: right;
+}
+
+.addEmployee > *:first-child {
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.addEmployee input {
+    width: 
+}

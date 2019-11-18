@@ -16,26 +16,29 @@
     <header>
         <h1>Salary Calculator</h1>
     </header>
-    <!-- Form fields for
+    
+    <h2>Add Employee</h2>
+    <div class="addEmployee">
+        <!-- Form fields for
         employee first name,
         last name,
         ID number,
         job title,
         annual salary -->
-    <h2>Add Employee</h2>
-    <div>
-        <input type="text" placeholder="First Name" class="js-field-firstname" />
-        <input type="text" placeholder="Last Name" class="js-field-lastname" />
-        <input type="number" placeholder="ID" class="js-field-id" />
-        <input type="text" placeholder="Title" class="js-field-title" />
-        <input type="number" placeholder="Annual Salary" class="js-field-salary" />
+        <div>
+            <input type="text" placeholder="First Name" class="js-field-firstname" />
+            <input type="text" placeholder="Last Name" class="js-field-lastname" />
+            <input type="number" placeholder="ID" class="js-field-id" />
+            <input type="text" placeholder="Title" class="js-field-title" />
+            <input type="number" placeholder="Annual Salary" class="js-field-salary" />
+        </div>
+
+        <!-- SUBMIT BUTTON -->
+        <button class="js-submit">Submit</button>
     </div>
 
-    <!-- SUBMIT BUTTON -->
-    <button class="js-submit">Submit</button>
-
     <!-- EMPLOYEE TABLE -->
-    <table>
+    <table class="plainTable">
         <thead>
             <tr>
                 <th>First Name</th>
@@ -51,7 +54,7 @@
         </tbody>
     </table>
 
-    <div>
+    <div class="totalMonthly">
         Total Monthly: <span class="js-total-monthly"></span>
     </div>
     
