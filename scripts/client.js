@@ -1,5 +1,27 @@
 console.log('WORKING JS');
-const EMPLOYEE_LIST = [];
+const EMPLOYEE_LIST = [
+    {
+        firstName: 'Myron',
+        lastName: 'Schippers',
+        id: 3,
+        title: 'Master',
+        annualSalary: 30000,
+    },
+    {
+        firstName: 'Rachael',
+        lastName:'Bromander',
+        id: 2,
+        title: 'Ninja',
+        annualSalary: 50000,
+    },
+    {
+        firstName: 'Scott',
+        lastName: 'Bromander',
+        id: 1,
+        title: 'Necromancer',
+        annualSalary: 20000,
+    }
+];
 
 // kick things off after DOM load
 $(document).ready(init)
@@ -8,6 +30,8 @@ function init() {
     // capture submit click event
     $('.js-submit').on('click', onClickSubmit);
     $('.js-employee-table').on('click', '.js-btn-delete', onClickDelete);
+
+    render();
 }
 
 function calculateMonthly() {
@@ -29,13 +53,25 @@ function calculateMonthly() {
 // ----------
 
 function onClickSubmit(event) {
+    const $firstName = $('.js-field-firstname');
+    const $lastName = $('.js-field-lastname');
+    const $id = $('.js-field-id');
+    const $title = $('.js-field-title');
+    const $salary = $('.js-field-salary');
+
     const newEmployee = {
-        firstName: $('.js-field-firstname').val(),
-        lastName: $('.js-field-lastname').val(),
-        id: parseInt($('.js-field-id').val()),
-        title: $('.js-field-title').val(),
-        annualSalary: parseInt($('.js-field-salary').val()),
+        firstName: $firstName.val(),
+        lastName: $lastName.val(),
+        id: parseInt($id.val()),
+        title: $title.val(),
+        annualSalary: parseInt($salary.val()),
     };
+
+    $firstName.val('');
+    $lastName.val('');
+    $id.val('');
+    $title.val('');
+    $salary.val('');
 
     EMPLOYEE_LIST.push(newEmployee);
     console.log('Clicked Submit - EMPLOYEE_LIST: ', EMPLOYEE_LIST);
@@ -55,6 +91,7 @@ function render() {
     const totalMonthly = calculateMonthly();
     const $employeeTable = $('.js-employee-table');
     const $monthly = $('.js-total-monthly');
+    console.log('EMPLOYEES_LIST: ', EMPLOYEE_LIST);
 
     $employeeTable.empty();
 
@@ -78,6 +115,6 @@ function render() {
     }
 
     $monthly.empty();
-    $monthly.append('<div class="' + monthlyStyle + '">$' + totalMonthly + '</div>');
+    $monthly.append('<span class="' + monthlyStyle + '">$' + totalMonthly + '</span>');
 
 }
