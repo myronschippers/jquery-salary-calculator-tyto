@@ -115,6 +115,6 @@ function render() {
     }
 
     $monthly.empty();
-    $monthly.append('<span class="' + monthlyStyle + '">$' + totalMonthly + '</span>');
+    $monthly.append('<span class="' + monthlyStyle + '">$' + totalMonthly.toFixed(2) + '</span>');
 
 }
